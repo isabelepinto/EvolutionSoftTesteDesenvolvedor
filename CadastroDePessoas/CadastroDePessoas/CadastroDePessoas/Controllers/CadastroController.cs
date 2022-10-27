@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CadastroDePessoas.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CadastroDePessoas.Controllers
@@ -7,5 +8,11 @@ namespace CadastroDePessoas.Controllers
     [ApiController]
     public class CadastroController : ControllerBase
     {
+        [HttpGet]
+        public ActionResult<List<PessoaModel>> BuscarTodasPessoas()
+        {
+            return Ok();
+        }
+        
     }
 }
