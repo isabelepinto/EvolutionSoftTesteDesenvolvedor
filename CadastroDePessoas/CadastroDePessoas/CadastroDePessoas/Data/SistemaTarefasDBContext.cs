@@ -10,5 +10,11 @@ namespace CadastroDePessoas.Data
         {}
 
         public DbSet<PessoaModel> Pessoas { get; set; }
+        public DbSet<ContatoModel> Contatos { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
