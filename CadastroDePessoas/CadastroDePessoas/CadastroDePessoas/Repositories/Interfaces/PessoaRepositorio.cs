@@ -22,8 +22,8 @@ namespace CadastroDePessoas.Repositories.Interfaces
         }
         public async Task<PessoaModel> Adicionar(PessoaModel pessoa)
         {
-            _dBContext.Pessoas.Add(pessoa);
-            _dBContext.SaveChanges();
+            await _dBContext.Pessoas.AddAsync(pessoa);
+            await _dBContext.SaveChangesAsync();
             return pessoa;
         }
 
@@ -36,7 +36,7 @@ namespace CadastroDePessoas.Repositories.Interfaces
             }
 
             _dBContext.Pessoas.Remove(pessoaPorId);
-            _dBContext.SaveChanges();
+            await _dBContext.SaveChangesAsync();
            
             return true;
         }
@@ -53,7 +53,7 @@ namespace CadastroDePessoas.Repositories.Interfaces
             pessoaPorId.Cpf = pessoa.Cpf;
 
             _dBContext.Pessoas.Update(pessoaPorId);
-            _dBContext.SaveChanges();
+            await _dBContext.SaveChangesAsync();
 
             return pessoaPorId;
         }

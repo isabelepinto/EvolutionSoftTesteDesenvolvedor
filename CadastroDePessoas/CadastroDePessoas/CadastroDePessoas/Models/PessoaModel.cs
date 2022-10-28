@@ -4,6 +4,7 @@ namespace CadastroDePessoas.Models
 {
     public class PessoaModel
     {
+        [Required]
         public int Id { get; set; }
         [Required]
         public int Cpf { get; set; }
@@ -11,7 +12,6 @@ namespace CadastroDePessoas.Models
         public string Nome { get; set; }
         [Required]
         public string Email { get; set; }
-        [Required]
         public int Cep { get; set; }
         public string Logradouro { get; set; }
         public string Complemento { get; set; }
