@@ -1,3 +1,7 @@
+using CadastroDePessoas.Data;
+using CadastroDePessoas.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
+
 namespace CadastroDePessoas
 {
     public class Program
@@ -12,6 +16,12 @@ namespace CadastroDePessoas
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddEntityFrameworkSqlServer()
+                .AddDbContext<SistemaTarefasDBContext>(
+                    options => options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase")));
+
+            builder.Services.AddScoped<IPessoaRepositorio, PessoaRepositorio>();
 
             var app = builder.Build();
 

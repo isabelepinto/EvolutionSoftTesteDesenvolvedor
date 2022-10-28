@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CadastroDePessoas.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace CadastroDePessoas.Models
 {
@@ -10,5 +11,6 @@ namespace CadastroDePessoas.Models
         public string Nome { get; set; }
         [Required]
         public int Celular { get; set; }
+        public CadastroPessoas StatusCadastro { get; set; }
     }
 }

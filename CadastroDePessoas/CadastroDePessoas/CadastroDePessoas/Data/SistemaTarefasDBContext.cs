@@ -1,4 +1,5 @@
-﻿using CadastroDePessoas.Models;
+﻿using CadastroDePessoas.Data.Map;
+using CadastroDePessoas.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CadastroDePessoas.Data
@@ -14,6 +15,8 @@ namespace CadastroDePessoas.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new CadastroMap());
+            modelBuilder.ApplyConfiguration(new PessoaMap());
             base.OnModelCreating(modelBuilder);
         }
     }
